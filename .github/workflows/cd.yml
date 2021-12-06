@@ -2,7 +2,7 @@ name: Deployment Test
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
 
@@ -22,8 +22,8 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
           
             cd /home/azurebikku/Deployment_Test &&
-            git checkout master &&
+            git checkout main &&
             git fetch --all &&
-            git reset --hard origin/master &&
-            git pull origin master &
+            git reset --hard origin/main &&
+            git pull origin main &
           '
